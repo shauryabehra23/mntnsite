@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/mntnsite/static/css/main.7564f5a1.css",
+    "main.js": "/mntnsite/static/js/main.658a2d85.js",
+    "static/js/453.142837a4.chunk.js": "/mntnsite/static/js/453.142837a4.chunk.js",
+    "static/media/back1.png": "/mntnsite/static/media/back1.489e061f67f784b83440.png",
+    "static/media/first.png": "/mntnsite/static/media/first.e5ea7488584239073c46.png",
+    "static/media/third.png": "/mntnsite/static/media/third.7251cd257188f1d5b5df.png",
+    "static/media/second.jpg": "/mntnsite/static/media/second.381d5c4424a3f3d0cc68.jpg",
+    "static/media/back2.png": "/mntnsite/static/media/back2.4151d916214713c453fd.png",
+    "static/media/ig.png": "/mntnsite/static/media/ig.ac32ec0a111aeba03298.png",
+    "static/media/twitter.png": "/mntnsite/static/media/twitter.5013f04d940647af5c74.png",
+    "index.html": "/mntnsite/index.html",
+    "main.7564f5a1.css.map": "/mntnsite/static/css/main.7564f5a1.css.map",
+    "main.658a2d85.js.map": "/mntnsite/static/js/main.658a2d85.js.map",
+    "453.142837a4.chunk.js.map": "/mntnsite/static/js/453.142837a4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7564f5a1.css",
+    "static/js/main.658a2d85.js"
+  ]
+}
