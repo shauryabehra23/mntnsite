@@ -168,60 +168,115 @@ body {
 }
 
 .content-section {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  position: relative;
+  min-height: 50vh;
 }
 
-.content-flex {
+.section-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 50vh;
   display: flex;
-  gap: clamp(1rem, 4vw, 3rem);
   align-items: center;
+  overflow: visible;
+}
+
+.image-container {
+  position: absolute;
+  width: 50%;
+  height: 70%;
+  min-height: 400px;
+  z-index: 1;
+}
+
+.image-left {
+  left: 0;
+  top: 15%;
+}
+
+.image-right {
+  right: 0;
+  top: 15%;
 }
 
 .content-image {
-  width: 39%;
-  aspect-ratio: 566/720;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 8px;
 }
 
-.content-image-left {
-  object-position: 40% center;
+.text-container {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  padding: 2rem;
+  overflow: visible;
 }
 
-.content-image-right {
-  object-position: center;
+.text-left {
+  left: 0;
+  justify-content: flex-start;
 }
 
-.text-content {
-  margin: auto 0;
-  flex: 1;
+.text-right {
+  right: 0;
+  justify-content: flex-end;
 }
 
 .content-wrapper {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: auto;
-  width: 70%;
+  max-width: 400px;
   font-weight: 500;
+}
+
+.text-content-inner {
+  position: relative;
+  z-index: 2;
 }
 
 .section-number {
   position: absolute;
-  text-align: center;
-  top: clamp(-4rem, -8vw, -6rem);
-  left: clamp(-2rem, -4vw, -3rem);
-  font-size: clamp(4rem, 12vw, 6rem);
-  color: grey;
-  opacity: 0.5;
+  font-size: clamp(10rem, 25vw, 18rem);
+  color: rgba(255, 255, 255, 0.08);
+  font-weight: 700;
   z-index: -1;
-  font-weight: 600;
+  pointer-events: none;
+  top: clamp(-2rem, -4vw, -3rem);
+  left: clamp(-4rem, -8vw, -6rem);
+  line-height: 1;
+}
+
+.text-left .section-number {
+  left: clamp(-4rem, -8vw, -6rem);
+}
+
+.text-right .section-number {
+  right: clamp(-4rem, -8vw, -6rem);
+  left: auto;
+}
+
+.odd .text-left .content-wrapper {
+  padding-right: 3rem;
+}
+
+.even .text-right .content-wrapper {
+  padding-left: 3rem;
 }
 
 .section-subtitle {
   font-size: clamp(1rem, 2.5vw, 1.4rem);
   color: #FBD784;
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .section-title {
@@ -233,12 +288,18 @@ body {
 .section-text {
   font-size: clamp(0.9rem, 2vw, 1rem);
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .read-more {
   font-size: clamp(0.9rem, 2vw, 1rem);
   color: #FBD784;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.read-more:hover {
+  opacity: 0.8;
 }
 
 .footer-grid {
@@ -308,22 +369,63 @@ body {
     order: 3;
   }
   
-  .content-flex {
+  .section-container {
     flex-direction: column;
+    height: auto;
+    min-height: auto;
+  }
+  
+  .image-container,
+  .text-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  
+  .image-left,
+  .image-right {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+  }
+  
+  .text-left,
+  .text-right {
+    position: relative;
+    left: auto;
+    right: auto;
+    justify-content: center;
     text-align: center;
+    padding: 1rem;
   }
   
   .content-image {
-    width: 100%;
+    height: 300px;
     margin-bottom: 2rem;
   }
   
   .content-wrapper {
-    width: 100%;
+    max-width: 100%;
+    padding: 0;
   }
   
-  .content-section.even .content-flex {
-    flex-direction: column-reverse;
+  .odd .text-left .content-wrapper,
+  .even .text-right .content-wrapper {
+    padding: 0;
+  }
+  
+  .section-number {
+    font-size: clamp(8rem, 20vw, 12rem);
+    color: rgba(255, 255, 255, 0.05);
+    top: clamp(-2rem, -4vw, -3rem);
+    left: clamp(-3rem, -6vw, -4rem);
+  }
+  
+  .text-left .section-number,
+  .text-right .section-number {
+    left: clamp(-3rem, -6vw, -4rem);
+    right: auto;
   }
   
   .footer-grid {
@@ -346,11 +448,15 @@ body {
     width: 30%;
   }
   
-  .content-image {
-    width: 45%;
+  .content-wrapper {
+    max-width: 350px;
   }
   
-  .content-wrapper {
-    width: 90%;
+  .odd .text-left .content-wrapper {
+    padding-right: 2rem;
+  }
+  
+  .even .text-right .content-wrapper {
+    padding-left: 2rem;
   }
 }
